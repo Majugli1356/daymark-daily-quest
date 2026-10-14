@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111714">
+  <meta name="description" content="Plan today, focus on what matters, and grow your progress one session at a time.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <title>Daymark — Your daily quest</title>
+  <style>
+    :root{color-scheme:dark;--bg:#111714;--panel:#19211d;--panel2:#202a24;--line:#2b3930;--text:#eef3ed;--muted:#9aa89e;--green:#9bd3a8;--green2:#274c35;--gold:#e8c879;--red:#d89483;--shadow:0 18px 50px #0003;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -20%,#25352b 0,transparent 44%),var(--bg);color:var(--text)}button,input,select{font:inherit}button{cursor:pointer}.shell{width:min(100% - 28px,1000px);margin:auto;padding:23px 0 60px}header{display:flex;align-items:center;justify-content:space-between;margin-bottom:35px}.brand{display:flex;align-items:center;gap:10px;font-weight:760;letter-spacing:-.04em}.brand-mark{display:grid;place-items:center;width:34px;height:34px;border-radius:11px;background:var(--green);color:#102015;font-size:19px}.date{color:var(--muted);font-size:13px}.hero{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:22px}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.15em;color:var(--green);font-weight:760}.hero h1{font-size:clamp(30px,6vw,43px);letter-spacing:-.055em;line-height:1.04;margin:8px 0}.hero p{color:var(--muted);margin:0;font-size:14px}.level-pill{white-space:nowrap;border:1px solid #44553e;border-radius:999px;padding:9px 12px;color:var(--gold);font-size:12px;font-weight:700;background:#25291e}.layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(265px,.8fr);gap:16px;align-items:start}.panel{background:linear-gradient(160deg,#1d2721,var(--panel));border:1px solid var(--line);border-radius:19px;box-shadow:var(--shadow)}.agenda{padding:20px}.section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px}.section-head h2{font-size:16px;margin:0;letter-spacing:-.02em}.subtle{font-size:12px;color:var(--muted)}.goal{padding:15px 16px;border:1px solid #45523a;border-radius:15px;background:linear-gradient(120deg,#263326,#21291f);margin-bottom:15px}.goal-top{display:flex;justify-content:space-between;align-items:center;gap:10px}.goal-label{color:var(--gold);font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.goal-text{font-size:14px;font-weight:620;margin-top:8px;overflow-wrap:anywhere}.goal-empty{font-size:13px;color:var(--muted);margin-top:7px}.link-btn,.icon-btn{background:none;border:0;color:var(--muted);font-size:12px;text-decoration:underline;text-underline-offset:3px;padding:4px}.form{display:grid;grid-template-columns:minmax(0,1fr) 142px 92px;gap:8px;margin-bottom:9px}.field,.select{height:43px;border:1px solid var(--line);border-radius:11px;padding:0 12px;background:#121a16;color:var(--text);min-width:0;outline:none}.field:focus,.select:focus{border-color:#6d9977;box-shadow:0 0 0 3px #78b78820}.row2{display:grid;grid-template-columns:1fr 112px auto;gap:8px;margin-bottom:17px}.hint{font-size:11px;color:var(--muted);align-self:center;line-height:1.35}.primary,.secondary,.danger{height:42px;border:0;border-radius:11px;padding:0 14px;font-weight:720}.primary{background:var(--green);color:#132117}.primary:hover{background:#b1e2ba}.secondary{background:#28362c;border:1px solid #394a3e;color:var(--text)}.danger{background:#3a2521;color:#f0b7a8}.activities{display:grid;gap:9px}.activity{display:grid;grid-template-columns:38px minmax(0,1fr) auto;align-items:center;gap:11px;padding:12px;border:1px solid var(--line);border-radius:14px;background:#171f1b}.activity.running{border-color:#6b9b74;background:#1b2920}.number{display:grid;place-items:center;width:34px;height:34px;border-radius:11px;background:#26342b;color:var(--green);font-size:12px;font-weight:800}.activity-title{font-weight:660;font-size:13px;overflow-wrap:anywhere}.activity-meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:5px;color:var(--muted);font-size:11px}.tag{border-radius:99px;padding:3px 7px;background:#27332b;color:#bfd6c2}.tag.unaligned{background:#342b26;color:#e7bb88}.activity-actions{display:flex;align-items:center;gap:6px}.mini{border:1px solid var(--line);background:#202a24;color:var(--text);border-radius:9px;padding:7px 9px;font-size:11px;font-weight:700;white-space:nowrap}.mini.go{color:var(--green);border-color:#48624e}.mini.del{color:var(--muted);padding:7px}.empty{padding:27px 12px;text-align:center;color:var(--muted);font-size:13px}.aside{display:grid;gap:14px}.focus{padding:19px;background:linear-gradient(145deg,#24412d,#19281e);border-color:#3f5d43}.focus .eyebrow{color:#bde2bb}.focus h2{font-size:16px;margin:7px 0 3px}.focus-name{font-size:12px;color:#c4d2c6;min-height:18px}.clock{font-variant-numeric:tabular-nums;font-size:clamp(40px,8vw,55px);font-weight:680;letter-spacing:-.065em;margin:18px 0 14px}.focus-actions{display:flex;gap:8px}.focus-actions button{height:41px}.focus .primary{background:#d7edce}.progress{padding:18px}.xp-line{display:flex;justify-content:space-between;align-items:end;gap:8px}.xp-number{font-size:26px;font-weight:750;letter-spacing:-.04em;margin-top:11px}.xp-caption{font-size:11px;color:var(--muted)}.bar{height:7px;border-radius:9px;background:#2a342d;overflow:hidden;margin-top:12px}.bar span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#a2d6a6,#e8c879);transition:width .25s}.quest{padding:18px}.quest h2{font-size:15px;margin:0}.quest-copy{font-size:12px;line-height:1.5;color:var(--muted);margin:8px 0 0}.quest-num{color:var(--green);font-weight:750}.settings{padding:17px}.settings summary{cursor:pointer;font-size:13px;font-weight:680;list-style:none}.settings summary::-webkit-details-marker{display:none}.settings summary:after{content:'+';float:right;color:var(--muted)}.settings[open] summary:after{content:'−'}.type-list{display:flex;flex-wrap:wrap;gap:6px;margin:13px 0}.type-chip{font-size:11px;color:#c3d2c5;border:1px solid #3a493d;padding:5px 8px;border-radius:99px}.type-form{display:grid;grid-template-columns:minmax(0,1fr) 83px auto;gap:7px}.type-form .field,.type-form .select{height:37px;font-size:12px;padding:0 8px}.type-form .primary{height:37px;padding:0 10px;font-size:12px}.footnote{color:var(--muted);font-size:10px;line-height:1.45;margin:13px 0 0}.quick{margin-top:15px;padding-top:13px;border-top:1px solid var(--line)}.quick-head{font-size:12px;font-weight:720;margin-bottom:8px}.toast{position:fixed;left:50%;bottom:20px;transform:translate(-50%,10px);opacity:0;pointer-events:none;padding:10px 14px;background:#e8f1e4;color:#152119;border-radius:11px;font-size:12px;font-weight:650;box-shadow:var(--shadow);transition:.2s}.toast.show{opacity:1;transform:translate(-50%,0)}
+    @media(max-width:740px){.shell{width:min(100% - 22px,540px);padding-top:16px}.layout{grid-template-columns:1fr}.hero{align-items:start;flex-direction:column}.agenda{padding:15px}.aside{grid-template-columns:1fr 1fr}.focus{grid-column:1/-1}.clock{font-size:51px}.form{grid-template-columns:minmax(0,1fr) 116px}.form .primary{grid-column:1/-1}.row2{grid-template-columns:minmax(0,1fr) 100px}.hint{grid-column:1/-1;grid-row:2}}
+    @media(max-width:430px){.activity{grid-template-columns:32px minmax(0,1fr)}.activity-actions{grid-column:2;justify-content:flex-end}.number{width:30px;height:30px}.aside{grid-template-columns:1fr}.focus{grid-column:auto}.form{grid-template-columns:1fr 104px}.row2{grid-template-columns:1fr 94px}.level-pill{font-size:11px}}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header><div class="brand"><span class="brand-mark">✳</span> daymark</div><div class="date" id="dateLabel"></div></header>
+    <section class="hero"><div><div class="eyebrow">Your daily quest</div><h1>Make today count.</h1><p>Plan your day, track your focus, and earn progress toward what matters.</p></div><div class="level-pill" id="levelPill">LEVEL 1 · SPROUT</div></section>
+    <div class="layout">
+      <section class="panel agenda">
+        <div class="section-head"><h2>Today’s agenda</h2><span class="subtle" id="agendaCount">0 activities</span></div>
+        <section class="goal"><div class="goal-top"><span class="goal-label">⌖ Pinned goal</span><button class="link-btn" id="editGoal" type="button">Set goal</button></div><div class="goal-empty" id="goalText">Choose a goal to guide your activities.</div></section>
+        <form id="activityForm">
+          <div class="form"><input class="field" id="activityName" maxlength="70" placeholder="What are you going to do?" aria-label="Activity name" required><select class="select" id="activityType" aria-label="Activity type"></select><button class="primary" type="submit">Add activity</button></div>
+          <div class="row2"><select class="select" id="alignment" aria-label="Does this activity support your goal?"><option value="yes">Supports my goal</option><option value="no">Not goal-related</option></select><input class="field" id="plannedMinutes" type="number" min="0" max="1440" placeholder="Plan (min)" aria-label="Planned minutes"><span class="hint">Planned time is optional. Actual time is tracked by the timer.</span></div>
+        </form>
+        <div class="activities" id="activityList" aria-live="polite"></div>
+        <div class="quick"><div class="quick-head">Quick track <span class="subtle">· start a timer without planning it</span></div><form class="form" id="quickForm"><input class="field" id="quickName" maxlength="70" placeholder="Name this activity" aria-label="Quick activity name" required><select class="select" id="quickType" aria-label="Quick activity type"></select><button class="secondary" type="submit">Start quick</button></form><div class="row2" style="margin:8px 0 0"><select class="select" id="quickAlignment" aria-label="Does this quick activity support your goal?"><option value="yes">Supports my goal</option><option value="no">Not goal-related</option></select><span class="hint" style="grid-column:auto">You can stop or finish it from the focus panel.</span></div></div>
+      </section>
+      <aside class="aside">
+        <section class="panel focus"><div class="eyebrow">Focus session</div><h2 id="focusHeading">Ready when you are.</h2><div class="focus-name" id="focusMeta">Select an activity or quick track one.</div><div class="clock" id="clock">00:00:00</div><div class="focus-actions"><button class="primary" id="pauseBtn" type="button" disabled>Start</button><button class="secondary" id="finishBtn" type="button" hidden>Finish</button></div></section>
+        <section class="panel progress"><div class="section-head" style="margin:0"><h2>Progress</h2><span class="subtle" id="xpLevel">Level 1</span></div><div class="xp-line"><div class="xp-number"><span id="xpToday">0</span> XP</div><div class="xp-caption">earned today</div></div><div class="bar"><span id="xpBar" style="width:0%"></span></div><div class="xp-caption" id="xpNext" style="margin-top:8px">0 / 100 XP to next level</div></section>
+        <section class="panel quest"><div class="section-head" style="margin:0"><h2>Daily quest</h2><span>✦</span></div><p class="quest-copy" id="questCopy">Spend <span class="quest-num">30 goal-related minutes</span> in focus today to earn a bonus.</p><div class="bar"><span id="questBar" style="width:0%"></span></div><div class="xp-caption" id="questProgress" style="margin-top:8px">0 / 30 minutes · +25 XP</div></section>
+        <details class="panel settings"><summary>Activity types</summary><div class="type-list" id="typeList"></div><form class="type-form" id="typeForm"><input class="field" id="typeName" maxlength="22" placeholder="New type" aria-label="New activity type" required><select class="select" id="typeAlign" aria-label="Default goal relation"><option value="yes">Goal-related</option><option value="no">Not related</option></select><button class="primary" type="submit">Add</button></form><p class="footnote">Add categories that fit your life. The goal relation is your own choice—leisure can support rest or connection if that helps your goals.</p></details>
+      </aside>
+    </div>
+  </main><div class="toast" id="toast" role="status"></div>
+  <script>
+    // STEP 1: Keep data for each date separately. localStorage stays in this browser/device.
+    const KEY='daymark-v2';
+    const dateKey=localDateKey(new Date());
+    const dateLabel=new Intl.DateTimeFormat(undefined,{weekday:'long',month:'long',day:'numeric'}).format(new Date());
+    const defaults=[{name:'Work',goalRelated:true},{name:'Study',goalRelated:true},{name:'Break',goalRelated:false},{name:'Leisure',goalRelated:false}];
+    let data=loadData();
+    let tick=null,toastTimer=null;
+    const $=selector=>document.querySelector(selector);
+    $('#dateLabel').textContent=dateLabel;
+
+    // STEP 2: Event listeners handle user actions; state is updated in one place.
+    $('#editGoal').addEventListener('click',()=>{
+      const goal=window.prompt('What is your main goal for this week or month?',data.goal||'');
+      if(goal===null)return;
+      data.goal=goal.trim(); persist(); render();
+    });
+    $('#activityForm').addEventListener('submit',event=>{
+      event.preventDefault();
+      const name=$('#activityName').value.trim(); if(!name)return;
+      const type=findType($('#activityType').value);
+      const minutes=Math.max(0,Number($('#plannedMinutes').value)||0);
+      today().activities.push({id:id(),name,type:type.name,goalRelated:$('#alignment').value==='yes',plannedMinutes:minutes,actualSeconds:0,done:false});
+      $('#activityName').value='';$('#plannedMinutes').value='';persist();render();$('#activityName').focus();
+    });
+    $('#quickForm').addEventListener('submit',event=>{
+      event.preventDefault(); const name=$('#quickName').value.trim();if(!name)return;
+      const type=findType($('#quickType').value);
+      startSession({id:id(),name,type:type.name,goalRelated:$('#quickAlignment').value==='yes',plannedMinutes:0,actualSeconds:0,done:false,quick:true});
+      $('#quickName').value='';$('#quickName').focus();
+    });
+    $('#activityList').addEventListener('click',event=>{
+      const button=event.target.closest('button[data-action]');if(!button)return;
+      const item=today().activities.find(activity=>activity.id===button.dataset.id);if(!item)return;
+      if(button.dataset.action==='start')startSession(item);
+      if(button.dataset.action==='done'){item.done=!item.done;persist();render();}
+      if(button.dataset.action==='delete'){
+        if(data.running?.itemId===item.id)finishSession(false);
+        today().activities=today().activities.filter(activity=>activity.id!==item.id);persist();render();
+      }
+    });
+    $('#pauseBtn').addEventListener('click',()=>{
+      if(!data.running){showToast('Choose an activity first.');return;}
+      pauseSession();
+    });
+    $('#finishBtn').addEventListener('click',()=>finishSession(true));
+    $('#typeForm').addEventListener('submit',event=>{
+      event.preventDefault();const name=$('#typeName').value.trim();if(!name)return;
+      if(data.types.some(type=>type.name.toLowerCase()===name.toLowerCase()))return showToast('That activity type already exists.');
+      data.types.push({name,goalRelated:$('#typeAlign').value==='yes'});$('#typeName').value='';persist();render();
+    });
+
+    function startSession(item){
+      if(data.running)pauseSession();
+      data.running={itemId:item.id,name:item.name,type:item.type,goalRelated:item.goalRelated,startedAt:Date.now(),date:dateKey};
+      persist();render();startTicker();
+    }
+    function pauseSession(){
+      accrue();data.running=null;stopTicker();persist();render();
+    }
+    function finishSession(markDone){
+      const running=data.running;if(!running)return;
+      accrue();
+      const item=today().activities.find(activity=>activity.id===running.itemId);
+      if(item&&markDone)item.done=true;
+      data.running=null;stopTicker();persist();render();showToast(markDone?'Session logged. Nice focus!':'Session stopped.');
+    }
+    // Timer records elapsed time when paused/finished, so sleeping phones do not lose time.
+    function accrue(){
+      if(!data.running)return;
+      const seconds=Math.max(0,Math.floor((Date.now()-data.running.startedAt)/1000));
+      const day=data.days[data.running.date]||(data.days[data.running.date]={activities:[],xp:0,questClaimed:false});
+      let item=day.activities.find(activity=>activity.id===data.running.itemId);
+      if(!item){item={id:data.running.itemId,name:data.running.name,type:data.running.type,goalRelated:data.running.goalRelated,plannedMinutes:0,actualSeconds:0,done:false,quick:true};day.activities.push(item);}
+      item.actualSeconds+=seconds;
+      // Reward goal-related focus at 1 XP per full minute; quest grants a one-time bonus.
+      if(item.goalRelated){const earned=Math.floor(item.actualSeconds/60)-Math.floor((item.actualSeconds-seconds)/60);day.xp+=earned;}
+      data.running.startedAt=Date.now();
+    }
+    function startTicker(){stopTicker();tick=setInterval(render,1000)}
+    function stopTicker(){if(tick)clearInterval(tick);tick=null}
+
+    // STEP 3: Rendering converts saved app state into the visible agenda and game progress.
+    function render(){
+      fillTypeSelect('#activityType');fillTypeSelect('#quickType');
+      $('#typeList').innerHTML=data.types.map(type=>`<span class="type-chip">${escapeHtml(type.name)} · ${type.goalRelated?'goal':'free'}</span>`).join('');
+      $('#goalText').textContent=data.goal||'Choose a goal to guide your activities.';
+      $('#goalText').className=data.goal?'goal-text':'goal-empty';$('#editGoal').textContent=data.goal?'Edit goal':'Set goal';
+      const activities=today().activities;
+      $('#agendaCount').textContent=`${activities.length} ${activities.length===1?'activity':'activities'}`;
+      $('#activityList').innerHTML=activities.length?activities.map((item,index)=>{
+        const live=data.running?.itemId===item.id?runningSeconds():0;
+        return `<article class="activity ${live?'running':''}"><div class="number">${String(index+1).padStart(2,'0')}</div><div><div class="activity-title">${escapeHtml(item.name)}</div><div class="activity-meta"><span class="tag ${item.goalRelated?'':'unaligned'}">${escapeHtml(item.type)} · ${item.goalRelated?'goal-related':'for me'}</span><span>${item.plannedMinutes?`Plan ${item.plannedMinutes}m · `:''}${item.quick?'Quick track · ':''}Actual ${duration(item.actualSeconds+live)}</span>${item.done?'<span>✓ Done</span>':''}</div></div><div class="activity-actions"><button class="mini go" data-action="start" data-id="${item.id}">${live?'Tracking': 'Focus'}</button><button class="mini" data-action="done" data-id="${item.id}">${item.done?'Undo':'Done'}</button><button class="mini del" aria-label="Delete activity" data-action="delete" data-id="${item.id}">×</button></div></article>`;
+      }).join(''):'<div class="empty">No plans yet. Add one activity to start your day.</div>';
+      renderGame();renderFocus();
+    }
+    function renderFocus(){
+      const running=data.running;
+      $('#focusHeading').textContent=running?running.name:'Ready when you are.';
+      $('#focusMeta').textContent=running?`${running.type} · ${running.goalRelated?'goal-related focus':'personal time'}`:'Select an activity or quick track one.';
+      $('#clock').textContent=formatClock(running?runningSeconds():0);
+      $('#pauseBtn').disabled=!running;$('#pauseBtn').textContent=running?'Pause':'Start';$('#finishBtn').hidden=!running;
+    }
+    function renderGame(){
+      const day=today(),xp=day.xp||0,level=Math.floor(xp/100)+1,within=xp%100;
+      const names=['SPROUT','SEEDLING','TRAILBLAZER','PATHFINDER','WAYFINDER','PIONEER'];
+      const label=names[Math.min(level-1,names.length-1)];
+      $('#levelPill').textContent=`LEVEL ${level} · ${label}`;$('#xpLevel').textContent=`Level ${level}`;$('#xpToday').textContent=xp;
+      $('#xpBar').style.width=`${within}%`;$('#xpNext').textContent=`${within} / 100 XP to next level`;
+      const goalMinutes=day.activities.filter(item=>item.goalRelated).reduce((sum,item)=>sum+item.actualSeconds,0)/60;
+      const quest=Math.min(100,goalMinutes/30*100);
+      $('#questBar').style.width=`${quest}%`;
+      if(goalMinutes>=30&&!day.questClaimed){day.questClaimed=true;day.xp+=25;persist();setTimeout(renderGame,0);}
+      $('#questProgress').textContent=day.questClaimed?'Quest complete · +25 XP':`${Math.floor(goalMinutes)} / 30 minutes · +25 XP`;
+    }
+
+    // STEP 4: Storage helpers keep data across reloads and separate each calendar day.
+    function today(){return data.days[dateKey]||(data.days[dateKey]={activities:[],xp:0,questClaimed:false})}
+    function loadData(){
+      try{const saved=JSON.parse(localStorage.getItem(KEY));if(saved&&saved.days)return{goal:saved.goal||'',types:Array.isArray(saved.types)?saved.types:defaults,days:saved.days,running:saved.running||null};}catch(error){console.warn('Could not load Daymark data',error)}
+      return{goal:'',types:defaults,days:{},running:null};
+    }
+    function persist(){localStorage.setItem(KEY,JSON.stringify(data))}
+    function fillTypeSelect(selector){const select=$(selector),current=select.value;select.innerHTML=data.types.map(type=>`<option value="${escapeHtml(type.name)}">${escapeHtml(type.name)}</option>`).join('');if(data.types.some(type=>type.name===current))select.value=current;}
+    function findType(name){return data.types.find(type=>type.name===name)||{name:'Personal',goalRelated:false}}
+    function localDateKey(date){return`${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`}
+    function id(){return crypto.randomUUID?crypto.randomUUID():`id-${Date.now()}-${Math.random()}`}
+    function runningSeconds(){return data.running?Math.max(0,Math.floor((Date.now()-data.running.startedAt)/1000)):0}
+    function formatClock(seconds){return[Math.floor(seconds/3600),Math.floor(seconds%3600/60),seconds%60].map(n=>String(n).padStart(2,'0')).join(':')}
+    function duration(seconds){const minutes=Math.floor(seconds/60),hours=Math.floor(minutes/60),remaining=minutes%60;return hours?`${hours}h ${remaining}m`:`${minutes}m`}
+    function escapeHtml(text){return String(text).replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]))}
+    function showToast(message){const toast=$('.toast');toast.textContent=message;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),2100)}
+
+    // A running session resumes after refresh. If it crossed midnight, save it to its start day.
+    if(data.running){
+      if(data.running.date!==dateKey){accrue();data.running=null;persist();}
+      else startTicker();
+    }
+    if('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('./sw.js').catch(error=>console.warn('Offline support unavailable:',error));
+    render();
+  </script>
+</body>
+</html>
